@@ -1,0 +1,42 @@
+.display_decks {
+    color: white; 
+    /* display: flex;  */
+}
+
+.card {
+    padding-top: 30px; 
+    color: white; 
+    display: flex; 
+    flex-direction: row-reverse; 
+} 
+
+.my_deck_container {
+    display: flex; 
+    /* flex-direction: row-reverse;  */
+}
+
+.card:hover{
+    transform: scale(1.2);
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+  
+}
+
+.cards {
+    display: flex; 
+    flex-direction: row-reverse;
+}
+
+.my_deck_name{
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.not_logged_in {
+    color: white; 
+}
+
+/* .my_deck_name{
+display: flex; 
+} */
+

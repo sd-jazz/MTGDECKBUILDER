@@ -1,0 +1,11 @@
+.fields {
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: baseline; 
+}
+
+.error_message {
+    color: white; 
+    font-style: italic;
+}

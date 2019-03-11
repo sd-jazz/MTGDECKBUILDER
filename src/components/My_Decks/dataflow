@@ -1,0 +1,23 @@
+SQL stores the data as a string ""
+JSON.parse converts that string into an object
+
+decks: [ ]
+Container of all decks which are arrays named deck.
+
+deck: [ ]
+Contains cards that are objects 
+
+card: { }
+Contains all the information from the card 
+
+
+UPDATE????
+
+Target I want to change: decks.deck_name 
+
+Change to: Whatever is in the input field when I click "Save Deck Name" 
+
+Challenges: 
+
+- Multiple input fields, how to manage this with change handlers?  
+- Do the input fields need to manipulate state?  If so, how do I have state for each one? 

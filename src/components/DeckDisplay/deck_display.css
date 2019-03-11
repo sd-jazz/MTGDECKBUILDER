@@ -1,0 +1,17 @@
+.deckContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap; 
+    margin-top: 104px;
+}
+
+.selected_card {
+    padding-top: 36px; 
+}
+
+.selected_card:hover {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+
+}

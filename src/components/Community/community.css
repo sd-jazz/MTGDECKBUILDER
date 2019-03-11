@@ -1,0 +1,14 @@
+.community_cards {
+    padding-top: 1px; 
+}
+
+.community_cards:hover{
+    transform: scale(1.2);
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+}
+
+.deck_author {
+    font-style: italic;
+    font-size: 20px;
+}

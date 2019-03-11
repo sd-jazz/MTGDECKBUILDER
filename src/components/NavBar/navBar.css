@@ -1,0 +1,21 @@
+header {
+    text-decoration: none;
+    color: white;
+    background-color: firebrick;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 4px; 
+}
+/* .home{
+    text-decoration: none;
+    color: white; 
+} */
+
+a{
+    color: white;
+    text-decoration: none; 
+}
+a:hover{
+    color: rgb(255, 166, 0);
+}

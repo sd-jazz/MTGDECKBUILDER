@@ -1,0 +1,16 @@
+.header{
+    display: flex; 
+    justify-content: space-between;
+}
+
+.header > .logo, .log_out {
+    color: white;
+    padding-left: 5px; 
+
+}
+
+.log_in a {
+    display: flex; 
+    justify-content: flex-end; 
+    padding-right: 10px; 
+}

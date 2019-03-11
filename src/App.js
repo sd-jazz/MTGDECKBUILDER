@@ -1,25 +1,52 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Header from './components/Header/Header';
+import NavBar from './components/NavBar/NavBar';
+import routes from './routes';
+
+// import './reset.css';
 
 class App extends Component {
+
+  constructor(props){
+    super(props)
+      this.state = {
+        scrolled: false
+      }
+  }
+
+  // componentDidMount(){
+  //   window.addEventListener('scroll', () => {
+  //     const isTop = window.scrollY < 100; 
+  //     console.log(window.scrollY)
+  //     if(isTop !== true){
+  //       this.setState({ scrolled: true })
+  //     } else {
+  //       this.setState({ scrolled: false })
+  //     }
+  //   });
+  // };
+
+  // componentWillUnmount(){
+  //   window.removeEventListener('scroll');
+  // }
+
+
   render() {
+  
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className='Header'>
+          <Header />
+        </div>
+
+      {/* <nav className={this.state.scrolled ? 'nav scrolled' : 'nav'}> */}
+        {/* <div className={this.state.scrolled ? 'nav scrolled' : 'nav'}> */}
+        <NavBar /> 
+        {routes}
+        {/* </div>  */}
+      {/* </nav> */}
+
       </div>
     );
   }

@@ -1,11 +1,31 @@
 {
   "name": "mtg-deckbuilder",
   "version": "0.1.0",
+  "main": "server/index.js",
+  "proxy": "http://localhost:4000",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "chart.js": "^2.7.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "http-proxy-middleware": "^0.19.1",
+    "massive": "^5.7.6",
     "react": "^16.8.2",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.2",
-    "react-scripts": "2.1.5"
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.5",
+    "react-stripe-checkout": "^2.6.3",
+    "react-stripe-elements": "^2.0.3",
+    "redux": "^4.0.1",
+    "stripe": "^6.25.1",
+    "twilio": "^3.29.1"
   },
   "scripts": {
     "start": "react-scripts start",

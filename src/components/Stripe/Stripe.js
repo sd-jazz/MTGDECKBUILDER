@@ -50,12 +50,10 @@ export default class Stripe extends React.Component {
 
 
         { paid && <div className="paid">
-          <img className="meme" src="https://i.imgur.com/1NBsdmu.jpg?1" />
+          <h1>Thank you for your donation!</h1>
         </div>}
 
       </div>
-
-
     )
   }
 }

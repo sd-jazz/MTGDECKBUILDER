@@ -138,7 +138,6 @@ class Deckbuilder extends Component {
                     <div className="search">
                         <h2>Search</h2>
                     </div>
-                
                     <input onChange={(e) => this.updateSearch(e.target.value)}placeholder="Search Card"/>
 
                     <div className="searchButtons">
@@ -171,7 +170,6 @@ class Deckbuilder extends Component {
                         <input onChange={(e) => this.updateName(e.target.value)}placeholder="Enter Deck Name"/>
 
                         <button className="saveButton" onClick={(e) => this.saveDeckName()}>
-                        
                             Save Deck
                         </button>
 

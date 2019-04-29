@@ -124,13 +124,26 @@ app.post('/logout', (req, res) => {
   res.send();
 });
 
-// STRIPE 
+// STRIPE AND TWILLIO 
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN; 
+const myPhoneNumber = process.env.TWILIO_MY_PHONE_NUMBER
+const client = require('twilio')(accountSid, authToken);
+
 
 app.post("/api/stripe", (req, res) => {
   const stripeToken = req.body;
+  const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+
   // const stripeToken = req.body.body;
+  console.log("TWILIO!")
+  client.messages.create({
+    to: myPhoneNumber,
+    from: 12244354644,
+    body: "ALL YOUR BASE ARE BELONG TO US"
+  }).then((message) => console.log(message.sid))
+
   console.log(stripeToken)
   stripe.charges.create({
       amount: 1000,
@@ -155,18 +168,10 @@ app.post("/api/stripe", (req, res) => {
 
 });
 
-// TWILIO 
-
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN; 
-
-const client = require('twilio')(accountSid, authToken);
-
-client.messages.create({
-  to: process.env.MY_PHONE_NUMBER,
-  from: '12244354644',
-  body: "ALL YOUR BASE ARE BELONG TO US"
-}).then((message) => console.log(message.sid))
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 const PORT = process.env.SERVER_PORT || 4000; 
 app.listen(PORT, () => console.log(`Ready to roll out on port ${PORT}`))

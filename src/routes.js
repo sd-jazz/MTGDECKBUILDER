@@ -10,8 +10,8 @@ import Stripe from './components/Stripe/Stripe';
 
 export default (
     <Switch>
-        <Route component={ Home } exact path="/" />
-        <Route component={ Deckbuilder } path="/deckbuilder" />
+        {/* <Route component={ Home } exact path="/" /> */}
+        <Route component={ Deckbuilder } exact path="/" />
         <Route component={ Hand_Simulator } path="/hand_simulator" />
         <Route component={ My_Decks } path="/my_decks" />
         <Route component={ Community } path="/community" />

@@ -4,15 +4,15 @@ import { Link, /* Route */} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { update_user } from '../../redux/reducer';
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
-        <header>
+        <header className={props.myClass}>
+
+            {/* <Link to="/">
+                <h2><a href="#">Home</a></h2>
+            </Link> */}
 
             <Link to="/">
-                <h2><a href="#">Home</a></h2>
-            </Link>
-
-            <Link to="/deckbuilder">
                 <h2><a href="#">Deckbuilder</a></h2>
             </Link>
 

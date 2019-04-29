@@ -20,7 +20,7 @@ class Community extends Component {
     
     fetchDecks = () => {
         axios.get('/api/get_decks').then(response => {
-            this.props.update_user_decks(response.data)
+            // this.props.update_user_decks(response.data)
             this.setState({
                 user_decks: response.data
             })
@@ -51,6 +51,16 @@ class Community extends Component {
                     // needs to parse from JSON 
                         card = JSON.parse(card)
                         console.log(card)
+
+                        // cmc = 
+                        //     decks.deck.map((card) => {
+                        //         card = JSON.parse(card)
+                        //         console.log("cmc", cmc)
+                        //         return  {
+                        //             label: card.name,data: [card.cmc]
+                        //         }
+                        //     })
+                        
                     return(
                     <div className="my_deck_container">
 
@@ -65,22 +75,20 @@ class Community extends Component {
                 </div>
 
             <div className="community_charts">
-                <Chart legendPosition ="bottom"/>
-                    { cmc = 
+                {/* <Chart legendPosition ="bottom"/> */}
+                    {/* { cmc = 
                         decks.deck.map((card) => {
                             card = JSON.parse(card)
                             console.log("cmc", cmc)
-                            return ( card.cmc ) 
-                        })
-                    }
-                <Bar 
-                    data={{
-                        datasets: [
-                            {
-                                label: "Converted Mana Costs",
-                                data: [0, 1, 2, 3, 4]
+                            return  {
+                                label: card.name, data: [card.cmc]
                             }
-                        ]
+                        })
+                    } */}
+                {/* <Bar 
+                    data={{
+                        datasets: cmc
+                           
                     }}
 
                     options={{
@@ -90,17 +98,12 @@ class Community extends Component {
                             fontSize: 25,
                         }
                     }}
-                   
-                    
-                />
-                
-
-              
+                /> */}
+        
             </div> 
 
-
-
         </div>
+
         )})
     
         return (

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Chart from '../Charts/Chart'
+import { Bar, Line, Pie } from 'react-chartjs-2';
 import { connect } from 'react-redux'; 
 import { Link } from 'react-router-dom';
 import { update_user_decks, update_user } from '../../redux/reducer';
@@ -70,11 +70,8 @@ class My_Decks extends Component {
         })
     }
 
-    // clearInputs = () => {
-        // input name={decks.deck_name} 
-    // }
-
     render(){
+        let cmc ; 
         const { user } = this.props;
         const { user_decks } = this.state
         const displayDecks = user_decks.map((decks, i) => {
@@ -103,8 +100,25 @@ class My_Decks extends Component {
                     // needs to parse from JSON 
                         card = JSON.parse(card)
                         // console.log(card)
+                        // console.log("TEST USER", user)
+                        cmc = 
+                        decks.deck.map((card) => {
+                            card = JSON.parse(card)
+                            console.log("cmc", cmc)
+                            return  {
+                                label: card.name,data: [card.cmc],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.6)',
+                                    'rgba(54, 162, 235, 0.6)',
+                                    'rgba(255, 206, 86, 0.6)',
+                                    'rgba(75, 192, 192, 0.6)',
+                                    'rgba(153, 102, 255, 0.6)',
+                                    'rgba(255, 159, 64, 0.6)',
+                                    'rgba(255, 99, 132, 0.6)' 
+                                ]
+                            }
+                        })
 
-                        console.log("TEST USER", user)
                     return(
                 <div className="my_deck_container">
 
@@ -117,20 +131,29 @@ class My_Decks extends Component {
 
                 )}
                 )}
+                        
+                </div>
 
                 <div className="deck_charts">
 
-                {/* <Chart /> */}
-                
-                    {/* <canvas id="deck_chart" width="400" height="400">
-                        {
-                            var ctx = "myChart";
-                        }
-                    </canvas> */}
+<Bar 
+    data={{ 
+        datasets: cmc 
+    }}
+    options={{
+        title: {
+            display: "CMC CHART",
+            text: 'CMC CHART',
+            fontSize: 25,
+        }
+    }}
+   
+    
+/>
 
-                </div>
-                        
-                </div>
+
+</div>
+
 
         </div>
         )
@@ -138,8 +161,8 @@ class My_Decks extends Component {
         }
         )
     
-        return (
-            <div className="myDecks">
+    return (
+         <div className="myDecks">
 
             {!user && <div className="not_logged_in"> 
                 <Link to="/login">
@@ -148,17 +171,18 @@ class My_Decks extends Component {
             </div>} 
 
 
-                {user && 
+            {user && 
                 <div className="conditional_display"> 
 
                     <div className="display_decks">
                         {displayDecks}
                     </div>
                     
-                 </div>} 
+                 </div>
+            } 
 
-            </div>
-        )
+        </div>
+    )
     }
 }
 

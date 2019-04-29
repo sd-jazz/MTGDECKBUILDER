@@ -17,12 +17,13 @@ class App extends Component {
 
   // componentDidMount(){
   //   window.addEventListener('scroll', () => {
-  //     const isTop = window.scrollY < 100; 
-  //     console.log(window.scrollY)
-  //     if(isTop !== true){
+  //     // console.log(window.scrollY)
+  //     if(window.scrollY > 100){
+  //       // console.log('past 100')
   //       this.setState({ scrolled: true })
   //     } else {
   //       this.setState({ scrolled: false })
+  //       // console.log('before 100')
   //     }
   //   });
   // };
@@ -40,12 +41,12 @@ class App extends Component {
           <Header />
         </div>
 
-      {/* <nav className={this.state.scrolled ? 'nav scrolled' : 'nav'}> */}
-        {/* <div className={this.state.scrolled ? 'nav scrolled' : 'nav'}> */}
-        <NavBar /> 
+      <nav className='nav'> 
+        <div className='nav'>
+        <NavBar myClass={this.state.scrolled ? 'nav scrolled' : 'nav'} /> 
         {routes}
-        {/* </div>  */}
-      {/* </nav> */}
+        </div>  
+       </nav> 
 
       </div>
     );

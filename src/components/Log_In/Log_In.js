@@ -88,7 +88,7 @@ class Log_In extends Component {
           // Initially there is no redirect in state, so it is falsey 
           // Log in / register will set it to true and trigger the redirect
           this.state.redirect ? 
-          <Redirect to="/deckbuilder" />
+          <Redirect to="/" />
           : 
           <div className="log_in">
 

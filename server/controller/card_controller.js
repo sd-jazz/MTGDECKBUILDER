@@ -74,7 +74,6 @@ module.exports = {
       }).catch(err => console.log('(getDecks) ERROR', err))
     },
 
-
     editDeckName: (req, res, next) => {
       const { deck_name } = req.params
       const { deck_id } = req.query 
@@ -91,6 +90,5 @@ module.exports = {
         res.status(200).json(response);
       }).catch(err => console.log ('deleteProduct ERROR', err))
     }
-
   }
   

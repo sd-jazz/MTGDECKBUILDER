@@ -8,7 +8,7 @@ export default class Checkout extends React.Component {
     return (
       <StripeCheckout
         name = "TEST"
-        amount="500"
+        amount="1000"
         billingAddress
         description="Awesome Product"
         // image="https://yourdomain.tld/images/logo.svg"

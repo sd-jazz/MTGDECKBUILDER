@@ -19,7 +19,8 @@ class Deckbuilder extends Component {
     }
 
     componentWillMount = () => {
-        const cardsBaseUrl = "http://localhost:4000/api/cards"
+        // const cardsBaseUrl = "http://localhost:4000/api/cards"
+        const cardsBaseUrl = "http://mymtgdeck.com/api/cards"
         let deck_name = {deck_name:this.state.deck_name}
         axios.get(cardsBaseUrl).then(
         results =>{
@@ -68,7 +69,8 @@ class Deckbuilder extends Component {
     }
 
     addCard = (card) => {
-        const cardsBaseUrl = "http://localhost:4000/api/cards"
+        // const cardsBaseUrl = "http://localhost:4000/api/cards"
+        const cardsBaseUrl = "http://mymtgdeck.com/api/cards"
         let body = { card: card }
         console.log("card", card)
         if (card !== ""){
@@ -87,7 +89,8 @@ class Deckbuilder extends Component {
       }
 
       removeCard = (name) => {
-        const cardsBaseUrl = `http://localhost:4000/api/cards/${name}`
+        // const cardsBaseUrl = `http://localhost:4000/api/cards/${name}`
+        const cardsBaseUrl = `http://mymtgdeck.com/api/cards/${name}`
         axios.delete(cardsBaseUrl).then(
           results => {
               // Updating state within Redux 
@@ -100,7 +103,8 @@ class Deckbuilder extends Component {
       }
 
     saveDeckName = () => {
-        const cardsBaseUrl = "http://localhost:4000/api/cards"
+        // const cardsBaseUrl = "http://localhost:4000/api/cards"
+        const cardsBaseUrl = "http://mymtgdeck.com/api/cards"
         let body = {deck_name: this.state.deck_input}
         axios.put(cardsBaseUrl, body).then(
             results => {

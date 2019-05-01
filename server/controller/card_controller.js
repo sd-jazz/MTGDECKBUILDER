@@ -1,6 +1,5 @@
 let deck = [];
 let deck_name = "Your Deckname Here"; 
-
 module.exports = {
 
     // NO DB CRUD
@@ -8,7 +7,6 @@ module.exports = {
     read: (req, res) => {
         // sets default deckname using variable up top
       res.status(200).send(deck_name)
- 
      },
 
      create: (req, res) => {

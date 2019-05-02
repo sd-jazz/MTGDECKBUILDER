@@ -26,7 +26,6 @@ app.use(session({
 
 app.use(express.static(`${__dirname}/../build`));
 
-
 // API endpoints 
 const cardsBaseUrl = "/api/cards"; 
 app.post(cardsBaseUrl, cc.create);

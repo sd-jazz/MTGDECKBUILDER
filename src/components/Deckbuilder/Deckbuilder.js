@@ -33,10 +33,23 @@ class Deckbuilder extends Component {
     }
 
     componentDidMount = () => {
-        this.setState ({
-            // This displays state from Redux 
-            deck: this.props.deck
-        })
+        // this.setState ({
+        //     // This displays state from Redux 
+        //     deck: this.props.deck
+        // })
+
+                // const cardsBaseUrl = "http://localhost:4000/api/cards"
+                const cardsBaseUrl = "/api/cards"
+                // const cardsBaseUrl = "http://mymtgdeck.com/api/cards"
+                let deck_name = {deck_name:this.state.deck_name}
+                axios.get(cardsBaseUrl).then(
+                results =>{
+                    console.log("RESULTS", results.data)
+                    this.setState({
+                        deck_name: results.data
+                    })
+                })
+        
     }
 
     updateSearch = (text) => {
